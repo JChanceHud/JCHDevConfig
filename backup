@@ -1,0 +1,34 @@
+#!/bin/sh
+
+function backup(){
+#pass the backup path as the only arg
+	#if ( $# != 1 )
+	#then
+	#	exit 2;
+	#fi
+	P=$1;
+	if [ ! -e $P ]; then mkdir $P; fi
+	cp ~/.profile $P/profile
+	cp ~/.vimrc $P/vimrc
+}
+
+FPATH=$(dirname $0);
+C=0;
+while ( true )
+do
+	if [ ! -e "$FPATH/backups/$C" ];
+	then
+		break;
+	fi
+	C=$((C+1));
+done
+
+backup "$FPATH/backups/$C";
+
+#symlink the new latest backup
+if [ -e "$FPATH/$((C-1))" ]
+then
+	rm "$FPATH/$((C-1))";
+fi
+
+ln -s "$FPATH/backups/$C" "$FPATH/latest"
