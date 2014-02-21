@@ -1,15 +1,35 @@
 #!/bin/sh
 
 function backup(){
-#pass the backup path as the only arg
-	#if ( $# != 1 )
-	#then
-	#	exit 2;
-	#fi
+#pass the backup path as the first arg
+#pass the path for the config file as the second arg
 	P=$1;
+	CONFIG=$2;
 	if [ ! -e $P ]; then mkdir $P; fi
-	cp ~/.profile $P/profile
-	cp ~/.vimrc $P/vimrc
+	if [ ! -f $CONFIG ]; then echo "no config file"; exit 2; fi
+	while read LINE
+	do
+		if [[ $LINE != \#* ]] && [ "$LINE" ] 
+		then
+			if [[ $LINE == \?* ]]
+			then
+				COMMAND=${LINE#?}; #strip the ?
+				COMMAND=${COMMAND%%\|*}; #strip the name
+				NAME=${LINE##*\|}; #get the name to save as
+				`$COMMAND > $P/$NAME`; #run the command and write output
+			else
+				ORIG=`eval "echo ${LINE%%\|*}"`; #expand the tilde to $HOME
+				echo $ORIG;
+				NEW="${LINE##*\|}";
+				if [ -e "$ORIG" ]
+				then
+					[[ -d $ORIG ]] && OPTIONS="-r" || OPTIONS="";
+					cp $OPTIONS $ORIG "$P/$NEW";
+				fi
+			fi
+		fi
+	done < $CONFIG
+	cp $CONFIG "$P/config";
 }
 
 FPATH=$(dirname $0);
@@ -23,12 +43,12 @@ do
 	C=$((C+1));
 done
 
-backup "$FPATH/backups/$C";
+backup "$FPATH/backups/$C" "$FPATH/config";
 
 #symlink the new latest backup
-if [ -e "$FPATH/$((C-1))" ]
+if [ -e "$FPATH/latest" ]
 then
-	rm "$FPATH/$((C-1))";
+	rm "$FPATH/latest";
 fi
 
 ln -s "$FPATH/backups/$C" "$FPATH/latest"

@@ -1,0 +1,41 @@
+sw_volume: 0
+audio_device_state:0:HTTP Stream
+audio_device_state:1:libao output
+audio_device_state:0:FIFO Output
+state: pause
+current: 3
+time: 188
+random: 0
+repeat: 1
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Bad Meets Evil/Helll - The Sequel/01 Welcome 2 Hell.mp3
+1:Bad Meets Evil/Helll - The Sequel/02 Fastlane.mp3
+2:Bad Meets Evil/Helll - The Sequel/03 The Reunion.mp3
+3:Bad Meets Evil/Helll - The Sequel/04 Above the Law.mp3
+4:Bad Meets Evil/Helll - The Sequel/05 I'm On Everything.mp3
+5:Bad Meets Evil/Helll - The Sequel/06 A kiss.mp3
+6:Bad Meets Evil/Helll - The Sequel/07 Lighters.mp3
+7:Bad Meets Evil/Helll - The Sequel/08 Take From Me.mp3
+8:Bad Meets Evil/Helll - The Sequel/09 Loud Noises.mp3
+9:Bad Meets Evil/Helll - The Sequel/10 Living Proof (Bonus Track).mp3
+10:Bad Meets Evil/Helll - The Sequel/11 Echo (Bonus Track).mp3
+11:Kanye West/My Beautiful Dark Twisted Fantasy/01 Dark Fantasy.mp3
+12:Kanye West/My Beautiful Dark Twisted Fantasy/02 Gorgeous.mp3
+13:Kanye West/My Beautiful Dark Twisted Fantasy/03 Power.mp3
+14:Kanye West/My Beautiful Dark Twisted Fantasy/04 All of the Lights (Interlude).mp3
+15:Kanye West/My Beautiful Dark Twisted Fantasy/05 All of the Lights.mp3
+16:Kanye West/My Beautiful Dark Twisted Fantasy/06 Monster.mp3
+17:Kanye West/My Beautiful Dark Twisted Fantasy/07 So Appalled.mp3
+18:Kanye West/My Beautiful Dark Twisted Fantasy/08 Devil In a New Dress.mp3
+19:Kanye West/My Beautiful Dark Twisted Fantasy/09 Runaway.mp3
+20:Kanye West/My Beautiful Dark Twisted Fantasy/10 Hell of a Life.mp3
+21:Kanye West/My Beautiful Dark Twisted Fantasy/11 Blame Game.mp3
+22:Kanye West/My Beautiful Dark Twisted Fantasy/12 Lost In the World.mp3
+23:Kanye West/My Beautiful Dark Twisted Fantasy/13 Who Will Survive In America.mp3
+24:Three Days Grace/One X/08 Let It Die.mp3
+playlist_end
