@@ -12,5 +12,6 @@
 ~/.ncmpcpp|ncmpcpp
 ~/.mpdconf|mpdconf
 ~/.mpd|mpd
+~/.inputrc|inputrc
 
 ?brew list|homebrew packages

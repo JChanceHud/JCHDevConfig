@@ -19,7 +19,6 @@ function backup(){
 				`$COMMAND > $P/$NAME`; #run the command and write output
 			else
 				ORIG=`eval "echo ${LINE%%\|*}"`; #expand the tilde to $HOME
-				echo $ORIG;
 				NEW="${LINE##*\|}";
 				if [ -e "$ORIG" ]
 				then
