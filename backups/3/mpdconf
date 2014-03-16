@@ -1,0 +1,42 @@
+music_directory "~/Music/Music"
+playlist_directory "~/.mpd/playlists"
+db_file "~/.mpd/database"
+log_file "~/.mpd/log"
+pid_file "~/.mpd/pid"
+state_file "~/.mpd/state"
+sticker_file "~/.mpd/sticker.sql"
+auto_update "yes"
+auto_update_depth "2"
+follow_outside_symlinks "yes"
+follow_inside_symlinks "yes"
+bind_to_address "::"
+playlist_plugin {
+    name "soundcloud"
+    enabled "true"
+    apikey "c4c979fd6f241b5b30431d722af212e8"
+}
+audio_output {
+    type "httpd"
+    name "HTTP Stream"
+    encoder "lame"
+    port "9000"
+    bitrate "320"
+    format "44100:16:1"
+}
+audio_output {
+type "ao"
+name "libao output"
+driver "macosx"
+}
+#audio_output {
+#    type "osx"
+#    name "OS X Output"
+#    mixer_type "software"
+#}
+
+audio_output {
+    type "fifo"
+    name "FIFO Output"
+    path "/tmp/mpd.fifo"
+    format "44100:16:1"
+}

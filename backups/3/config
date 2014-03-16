@@ -1,0 +1,17 @@
+#Config file
+#Format as
+#/file/path|name
+#where filepath is the path to the file and name is the name to use when backing up
+
+#using ? as the prefix will save the output of a command to a file specified after a pipe
+#example
+#?ls -a ~/|homeList
+
+~/.profile|profile
+~/.vimrc|vimrc
+~/.ncmpcpp|ncmpcpp
+~/.mpdconf|mpdconf
+~/.mpd|mpd
+~/.inputrc|inputrc
+
+?brew list|homebrew packages
